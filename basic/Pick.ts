@@ -1,3 +1,7 @@
+/**
+ * Pick<T,K> - contructs a type by selecting only K proprties form type T
+ */
+
 interface Student {
     name: string;
     age: number;
