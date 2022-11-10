@@ -1,5 +1,5 @@
 /**
- * Omit<T,K> - contructs a type by excluding the K proprties form type T
+ * Omit<T,K> - contructs a type by excluding K properties from type T
  * This is in converse with Pick<T,K>
  */
 

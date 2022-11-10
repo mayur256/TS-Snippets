@@ -1,5 +1,5 @@
 /**
- * Pick<T,K> - contructs a type by selecting only K proprties form type T
+ * Pick<T,K> - contructs a type by selecting only K properties from type T
  */
 
 interface Student {
