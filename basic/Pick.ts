@@ -18,3 +18,5 @@ const person: Person = {
 };
 
 console.log(person);
+
+export default {}
