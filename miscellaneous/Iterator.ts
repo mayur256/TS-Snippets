@@ -1,3 +1,4 @@
+
 // Iterable - as it implements Symbol.iterator
 // Iterator - as it implements next method
 const alphabetIterator = {
@@ -5,11 +6,11 @@ const alphabetIterator = {
     end: 90, // ASCII for Z
 
     // makes this object iterable
-    [Symbol.iterator]: function () {
+    [Symbol.iterator]: function (): any {
         return this;
     },
 
-    next() {
+    next(): { done: boolean, value?: any } {
         if (this.start <= this.end) {
             return { done: false, value: String.fromCharCode(this.start++) };
         } else {
@@ -21,3 +22,5 @@ const alphabetIterator = {
 for (const alphabet of alphabetIterator) {
     console.log(alphabet);
 }
+
+export { }
