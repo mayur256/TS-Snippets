@@ -11,11 +11,11 @@ const asyncRangeIterator = {
             return await new Promise(resolve => setTimeout(() => {
                 resolve({ done: false, value: this.start++ });
             }, 1000));
-        } else {
-            return await new Promise(resolve => setTimeout(() => {
-                resolve({ done: true });
-            }, 1000));
         }
+
+        return await new Promise(resolve => setTimeout(() => {
+            resolve({ done: true });
+        }, 1000));
     }
 };
 

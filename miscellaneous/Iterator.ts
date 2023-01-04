@@ -13,9 +13,9 @@ const alphabetIterator = {
     next(): { done: boolean, value?: any } {
         if (this.start <= this.end) {
             return { done: false, value: String.fromCharCode(this.start++) };
-        } else {
-            return { done: true };
         }
+
+        return { done: true };
     }
 }
 
