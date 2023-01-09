@@ -1,4 +1,6 @@
-// An Example to demonstrate data encapsulation and hiding using closures in javascript
+/** An Example to demonstrate data encapsulation and
+ * hiding implementation details using closures in javascript
+*/
 
 const counter = (
     function () {
