@@ -10,3 +10,7 @@ type TupleToUnion<T extends Array<any>> = T[number];
 type Tuple = ['A', 'a'];
 
 type Union = TupleToUnion<Tuple>; // 'A' | 'a'
+
+// const unionEx: Union = 'b'; // throws error: Type '"b"' is not assignable to type '"A" | "a"'
+
+export { };
