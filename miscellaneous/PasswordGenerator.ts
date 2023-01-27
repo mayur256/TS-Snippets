@@ -17,9 +17,11 @@ function* passwordGenerator() {
 };
 
 const codes = passwordGenerator();
-
+let str = '';
 for (const code of codes) {
-    console.log(String.fromCharCode(code));
+    str += String.fromCharCode(code);
 };
+
+console.log(str);
 
 export { };
