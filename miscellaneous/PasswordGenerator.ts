@@ -1,3 +1,6 @@
+/**
+ * Create a password generator using generateSequence
+ */
 import { generateSequence } from "./BasicGenerator";
 
 const DIGIT = { START: 48, END: 57 };
