@@ -17,6 +17,7 @@ type Replace<
 
 
 // test cases
-type A0 = Replace<'Mayur is good', 'good', 'bad'>
+type A0 = Replace<'Mayur is good', 'good', 'bad'> // Mayur is bad
+type A1 = Replace<'foobar', 'foo', 'zoo'> // zoobar
 
 export { }
