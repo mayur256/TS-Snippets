@@ -13,6 +13,8 @@ type ReplaceAll <T extends string, From extends string, To extends string> =
 
 // Test Case
 type A0 = ReplaceAll<'t y p e s', ' ', ''>
+type A1 = ReplaceAll<'foobar', 'o', 'a'>
+type A2 = ReplaceAll<'My name is Ravi. My name is Bob', 'My', 'Your'>
 
 export {}
 
