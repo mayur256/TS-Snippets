@@ -44,4 +44,16 @@ const functionName = function() {
      sayHello() // this works
      ```
   3. Function expression should almost always be defined in assignment statement (There are exceptions to this). Function declaration can defined in a standalone statement.
-  4. Function expression is only available to a JS interpreter from the moment it is defined. On the contrary Function declaration can be accessed from anywhere within the code block.
+     ```
+     // valid definition
+     const welcomeUser = function (name) {
+       console.log(`Welcome ${name})
+     }
+
+     // invalid definition
+     // throws error: Uncaught SyntaxError: Function statements require a function name
+     function (name) {
+       console.log(`Welcome ${name});
+     }
+     ```
+  5. Function expression is only available to a JS interpreter from the moment it is defined. On the contrary Function declaration can be accessed from anywhere within the code block.
