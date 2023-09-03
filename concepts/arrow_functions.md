@@ -7,3 +7,24 @@
   ```
 - Here, instead of the function keyword, it uses an arrow **( => )** made up of an equal sign and a greater-than character.
 - Arrow functions were introduced out of the necessity to be able to create small functions and later call them anywhere in the code, without having the need to retain their **contextual information**. They are heavily inspired from **lambda expressions**.
+
+## Syntactical variants
+### Implicit Return
+- The most concise syntax for arrow function involves an expression with zero or more parameters with a function body of single line that does not explicitly require a *return* statement.
+```
+// No need to write return keyword if the function body consists of a single line.
+// Also we can skip enclosing curly brackets 
+// No need to add parenthesis around list of parameters if it's singular
+const logOf = number => Math.log(number);
+
+const sum = (x,y) => x+y;
+```
+
+### Multiline line arrow function (with explicit return)
+```
+// arrow functions with multiline body use return keyword and enclosing brackets
+const sum = (x, y) => {
+  const result = x + y;
+  return result;
+}
+```
