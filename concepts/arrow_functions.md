@@ -17,6 +17,7 @@
 // No need to add parenthesis around list of parameters if it's singular
 const logOf = number => Math.log(number);
 
+// parenthesis for multiple parameters
 const sum = (x,y) => x+y;
 ```
 
@@ -28,3 +29,71 @@ const sum = (x, y) => {
   return result;
 }
 ```
+## Limitations and other characteristics
+### No binding for *this* keyword
+- Unlike Function declaration and expression, there is binding assigned for **this** keyword inside arrow functions at runtime
+- It inherits the value for it from enclosing environment.
+```
+// With function expression
+const person = {
+  name: 'John Doe',
+  age: 19,
+  displayAge: function () {
+    console.log(this.age);
+  },
+}
+
+console.log(person.displayAge()) // prints 19
+```
+
+```
+// With arrow function expression
+const person = {
+  name: 'John Doe',
+  age: 19,
+  displayAge: () => {
+    console.log(this.age);
+  },
+}
+
+console.log(person.displayAge()) // prints undefined
+```
+
+### No binding for *arguments* keyword as well
+```
+// With function expression
+const displayArgs = function () {
+  return arguments;
+}
+console.log(displayArgs([1,2,3])); // prints [1,2,3];
+```
+
+```
+// With arrow functions
+const displayArgs = () => arguments;
+console.log(displayArgs([1,2,3])); // Uncaught ReferenceError: arguments is not defined
+```
+
+### Can't be used as *constructors*
+- Since arrow functions don't have their own context and bindings for ***this*** variable, it can't be used as **constructor**.
+```
+// With function declaration
+function User(name, age) {
+  this.name = name;
+  this.age = age;
+};
+const per1 = new User('Max Plank', 64);
+```
+
+```
+// With arrow expression
+const User = (name, age) => {
+  this.name = name;
+  this.age = age;
+}
+
+// Uncaught TypeError: User is not a constructor
+const per1 = new User('Max Plank', 64);
+```
+
+### No access to *super* keyword in *class* constructor
