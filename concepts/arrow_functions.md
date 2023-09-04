@@ -96,4 +96,12 @@ const User = (name, age) => {
 const per1 = new User('Max Plank', 64);
 ```
 
-### No access to *super* keyword in *class* constructor
+## Merits
+- Arrow functions are more concise and readable compared to other function notations.
+- are more favourable in scenarios where we don't require to remember a function reference but only need to call a piece of code.
+- Works great for use cases where we need to define a function that does not creates it's own execution binding but inherits from the parent scope.
+
+## Demerits
+- Can't be used as **methods** within **object literals**, since they have no **own** value for **this** keyword.
+- Can't be used as a **constructor** in a **class** definition, since they don't have access to **super** keyword.
+- Arrow functions don't have access to **yield** keyword and so can't be used as **generators**.
