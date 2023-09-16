@@ -67,3 +67,12 @@ car['model number'] = 'XYZ'; // square brackets allows to have any string as pro
 const car = { name: 'Renault', getName: function() { return this.name } };
 car.getName(); // resolves to 'Renault'
 ```
+
+## Computed Properties
+- Square bracket syntax can also be extended to have dynamic properties for an object. Property key can be specified witha variable and can be evaluated at run-time.
+```
+const car = { name: 'Renault' };
+const dynamicProp = 'model year';
+car[dynamicProp] = 2020
+console.log(car); // prints { "name": "Renault", "model year": 2020 }
+```
