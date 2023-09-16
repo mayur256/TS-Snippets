@@ -1,7 +1,7 @@
 # Objects
 - Like every other language, Objects in Javascript are the most crucial entities and are the basic building blocks.
 - Objects in JS are of the **reference types**, meaning whenever an object is **referenced** like passing it to a function as an argument, or assigning it to an identifier, it's done by accessing it's **address** in the memory.
-- Objects are a **keyed** collection of heterogenous data.
+- Objects are a **keyed** collection of heterogeneous data.
 - Objects in JS are more than just keyed collection, they are the backbones behind the meticulous mechanism that is responsible for driving states of the most sophisticated application that run on the browser or on server.
 
 ## Object creation variants
@@ -30,7 +30,7 @@ const car2 = new Car('Aston Martin', 'Turquoise');
 ```
 
 3. **_Object.create() method_**
-   - The static method of Object can also be used to create objects from a **prototype**.
+   - The **static** method of Object can also be used to create objects from a **prototype**.
 ```
 const vehicle = { mileage: 40 };
 
@@ -69,7 +69,7 @@ car.getName(); // resolves to 'Renault'
 ```
 
 ## Computed Properties
-- Square bracket syntax can also be extended to have dynamic properties for an object. Property key can be specified witha variable and can be evaluated at run-time.
+- Square bracket syntax can also be extended to have dynamic properties for an object. Property key can be specified with a variable and can be evaluated at run-time.
 ```
 const car = { name: 'Renault' };
 const dynamicProp = 'model year';
