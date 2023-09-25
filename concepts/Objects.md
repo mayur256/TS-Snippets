@@ -76,3 +76,11 @@ const dynamicProp = 'model year';
 car[dynamicProp] = 2020
 console.log(car); // prints { "name": "Renault", "model year": 2020 }
 ```
+# Ways to create Object
+- The most obvious and prevalent way to create object in Javascripot is **Object literal** syntax
+```
+const person = {
+    firstName: 'John',
+    lastName: 'Doe'
+}
+```
