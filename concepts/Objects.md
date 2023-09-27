@@ -76,3 +76,29 @@ const dynamicProp = 'model year';
 car[dynamicProp] = 2020
 console.log(car); // prints { "name": "Renault", "model year": 2020 }
 ```
+
+## Ways to clone an Object
+- Object cloning is a non-trivial activity that we often perform in our applications to manipulate and maintain states.
+- As we know that objects in Javascript are of the reference type, so simply assigning the object to new variable doesn't create a clone of it.
+
+  ```
+  const user = {name: 'John Doe'};
+  const person = user; // this doesn't create a clone, but a new reference to the existing object
+  person.name = 'Alice'; // updates the contents of object
+  console.log(user.name) // Alice
+  ```
+- In this thread we will be exploring few, but prevalent and standard ways to clone objects.
+### 1. Object.assign
+- assign is a static method of the Object type that copies properties from one or more source objects into a target object and returns it.
+- It's syntax goes like this
+  ```
+  const cloned = Object.assign(target, source1, source2, ... , sourceN);
+  ```
+  ```
+  const user = {
+      name: 'John Doe',
+      age: 23
+  };
+  const clonedUser = Object.assign({}, user);
+  console.log(clonedUser); // Object { name: "John Doe", age: 23 }
+  ```
