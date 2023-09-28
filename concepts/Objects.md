@@ -79,7 +79,7 @@ console.log(car); // prints { "name": "Renault", "model year": 2020 }
 
 ## Ways to clone an Object
 - Object cloning is a non-trivial activity that we often perform in our applications to manipulate and maintain states.
-- As we know that objects in Javascript are of the reference type, so simply assigning the object to new variable doesn't create a clone of it.
+- As we know that objects in Javascript are of the **reference type**, so simply assigning the object to new variable doesn't create a clone of it.
 
   ```
   const user = {name: 'John Doe'};
@@ -88,6 +88,7 @@ console.log(car); // prints { "name": "Renault", "model year": 2020 }
   console.log(user.name) // Alice
   ```
 - In this thread we will be exploring few, but prevalent and standard ways to clone objects.
+  
 ### 1. Object.assign
 - assign is a static method of the Object type that copies properties from one or more source objects into a target object and returns it.
 - It's syntax goes like this
@@ -102,3 +103,53 @@ console.log(car); // prints { "name": "Renault", "model year": 2020 }
   const clonedUser = Object.assign({}, user);
   console.log(clonedUser); // Object { name: "John Doe", age: 23 }
   ```
+
+### 2. Spread Syntax
+- The spread operator takes all the properties of an object and **injects** them into another object.
+- It creates a deep copy of properties until the **first** level, nested object properties are **shallow cloned**.
+  ```
+  const person = {
+      name: 'Jon Snow',
+      age: 30,
+  };
+  const clonedPerson = { ...person };
+  console.log(clonedPerson);
+  // { name: 'Jon Snow', age: 30 }
+  ```
+
+  ### 3. JSON's parse and stringify static methods
+  - **stringify()** method converts a JS object into JSON string.
+  - **parse()** method converts a JSON string into native JS value or objects.
+  - It creates a deep clone of the nested objects as well.
+  - However it has its limitations such that it only works well with types that are compatible with JSON.
+    ```
+    const person = { name: 'Jon Snow', age: 30, address: { province: 'Northen State' } };
+    const clonedPerson = JSON.parse(JSON.stringify(person));
+    console.log(clonedPerson);
+    // { name: 'Jon Snow', age: 30, address: { province: 'Northen State' } }
+    ```
+
+  ### 4. structuredClone
+  - The global **structuredClone()** method creates a **deep clone** of a given value/object.
+    ```
+    const person = {
+        name: 'Jon Snow',
+        age: 30,
+        address: { province: 'Northen State' }
+    };
+    const clonedPerson = structuredClone(mushrooms1);
+    clonedPerson.address.state = 'Southern State';
+
+    console.log(person);
+    // person's address is correctly retained
+    // { name: 'Jon Snow', age: 30, address: { province: 'Northen State' } };
+    console.log(clonedPerson);
+    // { name: 'Jon Snow', age: 30, address: { province: 'Southern State' } };
+    ```
+
+    ### Caveats
+    - **Spread** and **Object.assign** create shallow clones.
+    - JSON's **parse** and **stringify** and the **structuredClone** global function create deep copies.
+    - Their usage depends on the context and have their own limitations.
+    - You can build your solutions to overcome these limitations, but it's better to use already established solutions like Lodash's **clone** and **cloneDeep**.
+
