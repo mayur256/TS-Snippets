@@ -6,7 +6,7 @@
   "author": "Mayur Upadhayay <mayur123a@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node"
+    "execute": "ts-node"
   },
   "devDependencies": {
     "ts-node": "^10.9.1",
