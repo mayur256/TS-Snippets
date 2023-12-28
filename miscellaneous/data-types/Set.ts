@@ -28,5 +28,7 @@ const setLike = new Map([
     [4, "four"]
 ]);
 
-console.log(set1.union(setLike))
+// console.log(set1.union(setLike)) // only supports in safari browsers at the moment
+
+
 export {}

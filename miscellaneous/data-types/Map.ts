@@ -44,6 +44,24 @@ console.table(vegetableObj);
 
 // Creating array from Map
 const vegetableArr = [...vegetableMap.entries()];
-console.table(vegetableArr)
+console.table(vegetableArr);
+
+// Cloning Maps
+const address = {
+    city: { pincode: '396584', name: 'Surat' },
+    state: 'Gujarat'
+};
+const original = new Map(Object.entries(address));
+console.table(original);
+
+const cloned = new Map(original);
+console.table(cloned);
+
+// Some identity checks
+console.log("original === cloned", original === cloned);
+console.log("original == cloned", original == cloned);
+// this checks tells us that the data is in-fact not cloned deeply, but only shallowly
+console.log("original.get('city') === cloned.get('city')", original.get('city') === cloned.get('city'));
+console.log("original.get('city') === address.city", original.get('city') === address.city);
 
 export {}
