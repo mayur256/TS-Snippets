@@ -2,6 +2,7 @@
  * The WeakSet is analoguous to Set with following exceptions
  * 1. It can have only objects as key and not prmitives.
  * 2. It discards the object once al of it's other references are removed
+ * 3. It has not interation functionality and hence lacks methods like keys, values, etc
  */
 
 const user = { name: "Adam" };
