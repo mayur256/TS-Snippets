@@ -30,5 +30,4 @@ const setLike = new Map([
 
 // console.log(set1.union(setLike)) // only supports in safari browsers at the moment
 
-
 export {}
