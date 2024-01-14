@@ -10,6 +10,7 @@ interface Function {
 // The subject function
 function adder(a: number, b: number): void {
     console.log(a+b);
+    console.timeEnd("ProtoWrapper");
 }
 
 // Prototype ovveriding
@@ -22,4 +23,5 @@ Function.prototype.defer = function (ms: number): any {
 
 // Calling overrided prototype method with native arguments
 console.log("Program started");
+console.time("ProtoWrapper")
 adder.defer(1000)(1, 2);
