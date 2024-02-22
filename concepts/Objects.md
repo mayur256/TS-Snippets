@@ -117,7 +117,7 @@ console.log(car); // prints { "name": "Renault", "model year": 2020 }
   // { name: 'Jon Snow', age: 30 }
   ```
 
-  ### 3. JSON's parse and stringify static methods
+### 3. JSON's parse and stringify static methods
   - **stringify()** method converts a JS object into JSON string.
   - **parse()** method converts a JSON string into native JS value or objects.
   - It creates a deep clone of the nested objects as well.
@@ -129,7 +129,7 @@ console.log(car); // prints { "name": "Renault", "model year": 2020 }
     // { name: 'Jon Snow', age: 30, address: { province: 'Northen State' } }
     ```
 
-  ### 4. structuredClone
+### 4. structuredClone
   - The global **structuredClone()** method creates a **deep clone** of a given value/object.
     ```
     const person = {
