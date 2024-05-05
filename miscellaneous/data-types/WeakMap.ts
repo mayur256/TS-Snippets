@@ -1,10 +1,10 @@
 /**
  * WeakMap is a data-structure that is similar to Map with following differences
  * 1. It can have only objects as key and not prmitives.
- * 2. It discards the object once al of it's other references are removed
- * 3. It has not interation functionality and hence lacks methods like keys, values, etc
+ * 2. It discards the object once all of it's other references are removed
+ * 3. It does not have iteration functionality and hence lacks methods like keys, values, etc
  * For e.g
- * With weakmap we can implement an optimal caching functionality as ilustrated below
+ * With weakmap we can implement an optimal caching functionality as illustrated below
  */
 
 // Cache definition
